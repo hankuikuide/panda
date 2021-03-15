@@ -1,0 +1,59 @@
+/* pages/passage/passage.wxss */
+@import "/assets/iconfont/panda.wxss";
+/* Component {
+  height: 100%;
+  width: 100%;
+} */
+
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+}
+
+.player .timeline {
+  padding: 0 20rpx;
+  display: flex;
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  align-content: center;
+  justify-content: center;
+}
+
+.player .timeline .time {
+  width: 15%;
+}
+
+.player .timeline .speed {
+  width: 8%;
+  border: 1px solid #6f7d91;
+  border-radius: 10px;
+  color: #6f7d91;
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  align-content: center;
+  justify-content: center;
+}
+
+.player .timeline .slider {
+  margin-top: 15rpx;
+  padding: 0 20rpx;
+  width: 50%;
+  /* padding: 0 30rpx; */
+}
+
+.player .func  {
+  margin-left: 100rpx;
+  margin-top: 25rpx;
+
+}
+.player .func icon {
+  margin-left:70rpx;
+  color: #0c8ed9;
+  font-size: 80rpx;
+}
+

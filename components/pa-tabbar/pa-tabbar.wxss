@@ -1,0 +1,21 @@
+/* components/pa-tabbar/pa-tabbar.wxss */
+
+.circle {
+  margin-left: 20rpx;
+}
+@keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.circle image {
+  margin-top: 4rpx;
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 100px;
+  animation: rotation 10s linear infinite;
+}

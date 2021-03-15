@@ -1,0 +1,34 @@
+/* pages/mine/mine.wxss */
+.header  {
+  display: flex;
+  align-items: center;
+}
+.header image {
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:100px;
+}
+
+.header .btn-login {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.body {
+  margin-top: 30rpx;
+}
+
+.download-cell {
+  display: flex;
+}
+
+.download-cell .tag {
+  margin-top: -10rpx;
+  margin-left: 10rpx;
+}
+
+.download-cell .tag text {
+  font-size: 20rpx;
+}

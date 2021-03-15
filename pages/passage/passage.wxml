@@ -1,0 +1,12 @@
+<!--pages/passage/passage.wxml-->
+<view>
+  <scroll-view scroll-y style='height: {{scrollHeight + "px"}}'>
+    <view class="body" wx:for="content" wx:key="index">asdfasdfdsf</view>
+    <view class="body" wx:for="content" wx:key="index">asdfasdfdsf</view>
+    <view class="body" wx:for="content" wx:key="index">asdfasdfdsf</view>
+  </scroll-view>
+
+
+
+  <pa-player class="footer"></pa-player>
+</view>

@@ -1,0 +1,14 @@
+/* pages/category/category.wxss */
+
+.body {
+  display: flex;
+}
+
+.scroll {
+  width: 100%;
+  /* 占满屏 */
+}
+
+.scroll van-button {
+  margin: 0 10rpx;
+}

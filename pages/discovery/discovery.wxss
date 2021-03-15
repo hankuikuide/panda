@@ -1,0 +1,55 @@
+/* pages/discovery/discovery.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 90%; 
+  overflow: hidden;
+}
+
+.content .scroll {
+  width: 100%;
+  height: 100%; 
+}
+
+.content .scroll .stat {
+  color: white;
+  display: flex;
+  position: relative;
+  top: -40rpx;
+  margin-left: 10rpx;
+}
+
+.content .scroll .stat .num{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+}
+.grid-item {
+  width: 100%; 
+  height: 100%;
+  /* padding: 8px 4px; */
+}
+
+.grid-item .van-grid-item__content {
+  padding: 20rpx 16rpx;
+}
+
+
+
+.grid-item .img {
+  width: 100%; 
+  height: 100%;
+}
+
+.grid-item image {
+  width: 100%; 
+  height: 100%;
+  border-radius: 15rpx;
+}
+.grid-item .title {
+  margin-top: -30rpx;
+  font-size: small;
+}

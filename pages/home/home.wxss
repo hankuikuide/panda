@@ -1,0 +1,9 @@
+/* pages/home/home.wxss */
+
+.grid-item image{
+  width: 50%; 
+  /* height: 70px; */
+}
+.grid-item view{
+  font-size: small;
+}

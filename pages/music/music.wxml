@@ -1,0 +1,41 @@
+<!--pages/music/music.wxml-->
+<view class="music-container">
+  <view class="header"> 
+    <view class="play">
+      <van-icon name="play-circle-o" size="40rpx" /> 
+      <text>播放全部 </text> <text class="num"> 265 </text>
+    </view>
+  </view>
+  <view class="body">
+    <scroll-view class="song-list" scroll-y>
+      <view class="item" wx:for="{{50}}" wx:key="index">
+        <van-icon name="add-o" size="40rpx" /> 
+        <view class="song">
+          <view class="title">小酒窝</view>
+          <view class="subtitle">林俊杰 2006年超人气偶像团队人个大赛总冠军</view>
+        </view>
+        <van-icon class="more" name="ellipsis" size="40rpx" /> 
+      </view>
+    </scroll-view>
+  </view>
+  <view class="footer">
+    <!-- <van-image round class="logo" width="100rpx" height="100rpx" src="https://img.yzcdn.cn/vant/cat.jpeg"/> -->
+    <view>
+      <van-circle class="circle" use-slot value="{{ value }}" color="{{ gradientColor }}"  layer-color="gray" stroke-width="3" size="55">
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F12155710907%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618129646&t=fc1c0d3ccea3e48ee76269a4c8204484" />
+        <!-- <van-image round class="logo" width="100rpx" height="100rpx" src="https://img.yzcdn.cn/vant/cat.jpeg"/> -->
+    </van-circle>
+    </view>
+    <view class="song">
+      <view class="title">世界第一等</view>
+      <view class="subtitle">刘德华 1999演唱会</view>
+    </view>
+    <view class="func">
+      <icon class="iconfont icon-play"></icon>
+      <icon class="iconfont icon-next"></icon>
+      <icon class="iconfont icon-category"></icon>
+    </view>
+
+  </view>
+</view>
+

@@ -1,0 +1,20 @@
+<!--pages/discovery/discovery.wxml-->
+<view class="content">
+  <scroll-view class="scroll" scroll-y>
+    <van-grid column-num="3" border="{{ false }}" wx:for="{{4}}" wx:key="index">
+      <van-grid-item class="grid-item" data-cid='{{item.id}}' bind:click="itemclick"  use-slot wx:for="{{ categorys }}" wx:key="index">
+        <view class="img">
+          <image mode="widthFix" src="{{ item.iconUrl }}"/>
+          <view class="stat">
+            <van-icon name="chat-o" />
+            <view class="num">299.9万</view>
+          </view>
+        </view>
+        <view class="title">{{ item.name }}</view>
+      </van-grid-item>
+    </van-grid>
+  </scroll-view>
+</view>
+
+
+<pa-tabbar active="2"></pa-tabbar>

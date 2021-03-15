@@ -1,0 +1,12 @@
+/* pages/passage/passage.wxss */
+
+Page {
+  height: 100%;
+  width: 100%;
+}
+.body {
+  margin-top: 30rpx;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}

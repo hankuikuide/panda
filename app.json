@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/passage/passage",
+    "pages/category/category",
+    "pages/discovery/discovery",
+    "pages/mine/mine",
+    "pages/music/music",
+    "pages/index/index",
+    "components/pa-tabbar/pa-tabbar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学习不刻苦，不如回家卖红薯",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "音乐"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ] 
+  },
+  "usingComponents": {
+    "pa-tabbar":"components/pa-tabbar/pa-tabbar",
+    "pa-player":"components/pa-player/pa-player"
+  },
+  "sitemapLocation": "sitemap.json"
+}

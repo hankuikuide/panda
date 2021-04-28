@@ -1,16 +1,16 @@
 <!--pages/category/category.wxml-->
 <view class="body">
   <view class="left">
-    <van-sidebar active-key="{{ activeKey }}">
-      <van-sidebar-item title="{{item.name}}" dot badge="5" wx:for="{{ books }}" wx:key="id" />
+    <van-sidebar active-key="{{ activeKey }}" >
+      <van-sidebar-item title="{{item.name}}" dot badge="5" wx:for="{{ books }}" wx:key="id" data-item="{{item}}" bind:click="onSidebarClick"/>
     </van-sidebar>
   </view>
   <view>
     <van-tabs active="{{ active }}" bind:change="onChange">
       <van-tab class="tab" title="课文">
         <scroll-view scroll-y class="scroll" style='height: {{scrollHeight + "px"}}'>
-          <van-card num="2" tag="已传" price="10.00" desc="" title="{{item.name}}" thumb="{{ imageURL }}" data-item="{{item}}" bindtap="itemClick"
-            wx:for="{{lessons}}" wx:key="id">
+          <van-card num="2" tag="已传" price="10.00" desc="" title="{{item.name}}" thumb="{{ cdnServer + item.iconUrl }}" data-item="{{item}}" bindtap="itemTextClick"
+            wx:for="{{textLessons}}" wx:key="id">
             <!-- <view slot="footer">
               <van-button size="mini">单词</van-button>
               <van-button size="mini">课文</van-button>
@@ -20,8 +20,8 @@
       </van-tab>
       <van-tab title="单词">
         <scroll-view scroll-y class="scroll"  style='height: {{scrollHeight + "px"}}'>
-          <van-card num="2" tag="已上传" price="10.00" desc="" title="{{item.name}}" thumb="{{ imageURL }}"
-            wx:for="{{lessons}}" wx:key="id">
+          <van-card num="2" tag="已上传" price="10.00" desc="" title="{{item.name}}" thumb="{{ cdnServer + item.iconUrl }}" data-item="{{item}}" bindtap="itemWordClick"
+            wx:for="{{wordLessons}}" wx:key="id">
           </van-card>
         </scroll-view>
       </van-tab>

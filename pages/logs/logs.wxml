@@ -1,6 +1,15 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+
+<view>
+  <view>adsfasdfadsfadsfadsf</view>
+  <view>adsfasdfadsfadsfadsf</view>
+  <view>adsfasdfadsfadsfadsf</view>
+  <view>adsfasdfadsfadsfadsf</view>
+  <!-- <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </van-dropdown-menu> -->
+  <van-cell title="展示弹出层" is-link bind:click="showPopup" />
+  <view bindtap="showPopup">2222222</view>
+  
 </view>

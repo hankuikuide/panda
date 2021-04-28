@@ -1,0 +1,96 @@
+/* pages/mine/components/my-header.wxss */
+@import "/assets/iconfont/panda.wxss";
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #0c8ed9;
+  height: 170rpx;
+  padding: 12rpx 30rpx;
+  color: #fff;
+}
+
+.avatar image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  background: #f2f2f2;
+  vertical-align: middle;
+}
+
+.login-info {
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+
+.login-info .login {
+  font-size: 30rpx;
+  margin-top: 18rpx;
+  background: #0c8ed9;
+  border: none;
+  color: #fff;
+  text-align: left;
+  line-height: 55rpx;
+  display: flex;
+  flex-direction: row;
+  /* height: 24rpx; */
+}
+
+.login-info .login .city {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}
+
+.login-info .login icon {
+  /* margin-left: 30rpx; */
+  color: #fff;
+}
+
+.login-info button{
+  padding: 0;
+  border-radius:0;
+}
+
+.login-info button::after{
+  border: none;
+  padding: 0;
+  text-align: left;
+  box-sizing: none;
+}
+
+.login-info .phone {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.phone image {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  position: relative;
+  bottom: 4rpx;
+}
+
+.arrow {
+  position: absolute;
+  right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.arrow image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-userNickName {
+  
+}

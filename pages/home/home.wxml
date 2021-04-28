@@ -2,8 +2,8 @@
 <van-skeleton title avatar row="3" loading="{{ loading }}">
   <van-grid border="{{ false }}" column-num="2">
     <scroll-view scroll-y style='height: {{scrollHeight + "px"}}'>
-      <van-grid-item class="grid-item" use-slot bind:click="itemclick" wx:for="{{ books }}" wx:key="id">
-        <image  mode="widthFix" src="{{ item.iconUrl }}"/>
+      <van-grid-item class="grid-item" use-slot bind:click="itemclick" data-item="{{item}}" wx:for="{{ books }}" wx:key="id">
+        <image  mode="widthFix" src="{{ cdnServer + item.iconUrl }}"/>
         <view>{{ item.name }}</view>
       </van-grid-item>
     </scroll-view>
@@ -11,7 +11,7 @@
   </van-grid>
 </van-skeleton>
 
-<pa-tabbar  class="tabbar" active="0"></pa-tabbar>
+<pa-tabbar class="tabbar" active="0"></pa-tabbar>
 
 
 

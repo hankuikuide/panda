@@ -46,6 +46,11 @@
   /* padding: 0 30rpx; */
 }
 
+.player .timeline .slider .slider-button{
+  width: 10px;
+  height: 10px;
+}
+
 .player .func  {
   margin-left: 100rpx;
   margin-top: 25rpx;
@@ -57,3 +62,38 @@
   font-size: 80rpx;
 }
 
+.player .func icon:active {
+  transition: all 1s;
+  padding:10 0 0 10;
+  color: red;
+}
+
+.popup-list {
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  width: 100%;
+}
+
+.popup-list .left {
+  width: 2%;
+  align-self: center;
+}
+
+.popup-list .center {
+  width: 98%;
+  margin-left: 40rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  border-bottom: 0.1px solid gray;
+}
+
+.popup-list .name {
+  font-size: 35rpx;
+}
+
+.popup-list .source {
+  font-size: 30rpx;
+  color: #6f7d91;
+}

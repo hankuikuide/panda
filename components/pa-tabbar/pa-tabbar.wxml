@@ -2,9 +2,10 @@
   <block wx:for="{{bars}}" wx:key="name">
     <block wx:if="{{item.name=='play'}}">
       <van-tabbar-item>
-        <van-circle class="circle" use-slot value="{{ value }}" color="{{ gradientColor }}" layer-color="gray"
+        <van-circle class='circle' use-slot value="{{ value }}" color="{{ gradientColor }}" layer-color="gray"
           stroke-width="3" size="45">
           <image
+            class='{{playing ? "img-ani": "img-static"}}'
             src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F12155710907%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618129646&t=fc1c0d3ccea3e48ee76269a4c8204484" />
           <!-- <van-image round class="logo" width="100rpx" height="100rpx" src="https://img.yzcdn.cn/vant/cat.jpeg"/> -->
         </van-circle>

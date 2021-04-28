@@ -2,6 +2,9 @@
   "component": true,
   "usingComponents": {
     "van-slider": "@vant/weapp/slider/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-popup": "@vant/weapp/popup/index"
   }
 }

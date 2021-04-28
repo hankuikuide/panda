@@ -1,9 +1,5 @@
 <!--pages/mine/mine.wxml-->
-<view class="header">
-  <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3483437412,2493748034&fm=26&gp=0.jpg" />
-  <view class="btn-login">立即登录</view>
-
-</view>
+<my-header></my-header>
 <view class="body">
   <van-cell-group title="分组1">
     <van-cell title="观看历史" icon="clock-o" is-link value="内容"  arrow-direction="down"/>

@@ -1,44 +1,23 @@
 // pages/category/category.js
-Page({
 
+const app = getApp()
+
+import {
+  getBooks,
+  getLessons
+} from '../../service/home.js'
+Page({
   /**
    * 页面的初始数据
    */
   data: {
+    cdnServer: app.globalData.cdnServer,
     activeKey: 0,
     scrollHeight: 0,
     imageURL: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-    books: [{
-        name: "标日初上",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "1"
-      },
-      {
-        name: "标日初下",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "2"
-      },
-      {
-        name: "标日中上",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "3"
-      },
-      {
-        name: "标日中下",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "4"
-      },
-      {
-        name: "标日高上",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "5"
-      },
-      {
-        name: "标日高下",
-        iconUrl: "http://81.68.234.73:8088/images/nav/standardjunior1.jpg",
-        id: "6"
-      }
-    ],
+    books: app.globalData.books,
+    textLessons: null,
+    wordLessons: null,
     lessons: [{
         id: 1,
         name: "第1课 李さんは　中国人です"
@@ -134,18 +113,38 @@ Page({
       let searchHeight = res[0].height
       let titleHeight = res[1].height
       let windowHeight = wx.getSystemInfoSync().windowHeight
-      let scrollHeight = windowHeight - searchHeight - titleHeight - 30 - 5 - 50 
-      this.setData({ scrollHeight: scrollHeight})
+      let scrollHeight = windowHeight - searchHeight - titleHeight - 30 - 5 - 50
+      this.setData({
+        scrollHeight: scrollHeight
+      })
     })
   },
-  itemClick(e){
-    console.dir(e.currentTarget.dataset)
+  onSidebarClick(e) {
+    var bookId = e.currentTarget.dataset.item.id
+    this.getLessons(bookId)
+  },
+  itemWordClick(e) {
+    var lessonId = e.currentTarget.dataset.item.id
+    //加载单词lesson至全局播放列表
+    app.globalData.list = this.data.wordLessons
+    //指定播放索引playIndex
+    //页面跳转
     wx.navigateTo({
-      url: '/pages/passage/passage?id=1',
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        //res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-        console.dir(res)
+      url: '/pages/passage/passage?lessonId=' + lessonId + '&category=word',
+      success: function (res) {
+        //console.dir(res)
+      }
+    })
+  },
+  itemTextClick(e) {
+    var lessonId = e.currentTarget.dataset.item.id
+    //加载课文lesson至全局播放列表
+    app.globalData.list = this.data.textLessons
+    //指定播放索引playIndex
+    wx.navigateTo({
+      url: '/pages/passage/passage?lessonId=' + lessonId + '&category=text',
+      success: function (res) {
+        //console.dir(res)
       }
     })
   },
@@ -153,15 +152,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      books: app.globalData.books
+    })
+    this.getLessons(app.globalData.currentBookId)
   },
-
+  getLessons(bookId) {
+    const that = this
+    getLessons(bookId).then(res => {
+      const cates = res.data
+      that.setData({
+        textLessons: cates[0].lessons,
+        wordLessons: cates[1].lessons
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     let that = this;
-    setTimeout(function() {
+    setTimeout(function () {
       that.computeScrollViewHeight()
     }, 100)
   },
@@ -170,7 +181,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var bookId = app.globalData.currentBookId
+    var index = app.globalData.books.findIndex(res => res.id === bookId)
+    this.setData({
+      activeKey: index
+    })
   },
 
   /**

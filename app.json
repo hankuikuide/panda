@@ -2,9 +2,11 @@
   "pages": [
     "pages/home/home",
     "pages/passage/passage",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/login/login",
     "pages/category/category",
     "pages/discovery/discovery",
-    "pages/mine/mine",
     "pages/music/music",
     "pages/index/index",
     "components/pa-tabbar/pa-tabbar"
@@ -43,5 +45,8 @@
     "pa-tabbar":"components/pa-tabbar/pa-tabbar",
     "pa-player":"components/pa-player/pa-player"
   },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "sitemapLocation": "sitemap.json"
 }

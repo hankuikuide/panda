@@ -1,4 +1,9 @@
 // pages/mine/mine.js
+import {
+  getOpenId,
+  getPhoneNumber
+} from '../../service/mine.js'
+
 Page({
 
   /**
@@ -12,7 +17,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.wxlogin()
+  },
+  wxlogin() {
+    // wx.login({
+    //   success: (res) => {
+    //     let code = res.code
+    //     let that = this;
+    //     getOpenId(code).then(res => {
+    //       console.dir(res)
+    //     })
+    //   }
+    // })
   },
 
   /**

@@ -1,0 +1,46 @@
+.headView {
+  margin: 90rpx 50rpx 90rpx 50rpx;
+  /*上右下左*/
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.titleText {
+  margin-left: 25px;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #020e0f;
+  text-align: center;
+}
+
+.contentText {
+  margin-left: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.authBtn {
+  margin-top: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 45px;
+  font-size: 17.5px;
+}

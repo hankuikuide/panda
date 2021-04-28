@@ -1,0 +1,56 @@
+<!--pages/mine/components/my-header.wxml-->
+<!--pages/profile/childCpns/w-header/w-header.wxml-->
+<view class='header'>
+  <block wx:if="{{loginStatus}}" calss="userinfo-opendata">
+    <view class='avatar'>
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class='login-info'>
+      <!-- <view class='login'>登录/注册</view> -->
+      <!-- <button class='login' style="height:55rpx" open-type="getPhoneNumber"
+        bindgetphonenumber="getPhoneNumber">授权登录</button> -->
+      <view class='login'>
+        <view>{{userInfo.nickName}}</view>
+        <icon class="{{userInfo.gender==1 ? 'iconfont icon-nan':'iconfont icon-nv'}}"></icon>
+        <view class="city">{{userInfo.city}}</view>
+      </view>
+      <view class='phone'>
+        <image src="/assets/images/phone.png" />
+        暂无绑定手机号
+      </view>
+    </view>
+    <view class='arrow'>
+      <image src="/assets/images/arrow-right.png" />
+    </view>
+    <!-- <view class="userinfo-avatar" bindtap="bindViewTap">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="userinfo-userNickName">
+      <open-data type="userNickName"></open-data>
+    </view> -->
+  </block>
+  <!-- <block wx:elif="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+    <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+  </block> -->
+  <block wx:else>
+    <view class='avatar'>
+      <image src="/assets/images/avatar.png" />
+    </view>
+    <view class='login-info'>
+      <!-- <view class='login'>登录/注册</view> -->
+      <!-- <button class='login' style="height:55rpx" open-type="getPhoneNumber"
+        bindgetphonenumber="getPhoneNumber">授权登录</button> -->
+      <button class='login' style="height:55rpx" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登录</button>
+      <view class='phone'>
+        <image src="/assets/images/phone.png" />
+        暂无绑定手机号
+      </view>
+    </view>
+    <view class='arrow'>
+      <image src="/assets/images/arrow-right.png" />
+    </view>
+  </block>
+
+</view>

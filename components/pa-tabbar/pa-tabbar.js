@@ -1,4 +1,5 @@
 // components/pa-tabbar/pa-tabbar.js
+var app = getApp()
 Component({
   properties: {
     // 这里定义了innerText属性，属性值可以在组件使用时指定
@@ -11,6 +12,7 @@ Component({
    * 页面的初始数据
    */
   data: {
+    playing: false,
     value: 80,
     gradientColor: {
       '0%': '#0c8ed9',
@@ -28,7 +30,6 @@ Component({
       this.setData({ active: event.detail });
       // 页面跳转
       var item = this.data.bars[event.detail];
-      console.dir(item);
       if(!!item){
         wx.switchTab({
           url: item.path
@@ -41,9 +42,13 @@ Component({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.watch(this.watchBack)
   },
-
+  watchBack(value){
+    this.setData({
+      playing: value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

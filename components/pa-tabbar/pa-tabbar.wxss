@@ -12,7 +12,15 @@
   }
 }
 
-.circle image {
+.circle .img-static {
+  margin-top: 4rpx;
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 100px;
+  /* animation: rotation 10s linear infinite; */
+  
+}
+.circle .img-ani  {
   margin-top: 4rpx;
   width: 85rpx;
   height: 85rpx;

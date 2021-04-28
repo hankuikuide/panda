@@ -1,32 +1,59 @@
-
 <view class="player">
   <view class="timeline">
     <view class="time">{{mod.format(currentTime)}}</view>
-    <van-slider class="slider" value="{{currentTime}}" button-size="2rpx" min="0"  max="{{duration}}" bind:change="onChange" />
+    <van-slider class="slider" value="{{currentTime}}" bar-height="2rpx" min="0" max="{{duration}}" bind:change="seek"
+      bind:drag="seeking">
+      <!-- use-button-slot -->
+      <!-- <view class="slider-button" slot="button"></view> -->
+    </van-slider>
     <view class="time">{{mod.format(duration)}}</view>
     <text class="speed">倍速</text>
   </view>
   <view class="func">
-    <icon class="iconfont icon-shangyishou1"></icon>
+    <icon class="iconfont icon-shangyishou1" bindtap="playPrev"></icon>
     <block wx:if="{{playing==false}}">
-      <icon class="iconfont icon-play" bindtap="iconPlayClick"></icon>
+      <icon class="iconfont icon-play" bindtap="start"></icon>
     </block>
     <block wx:else>
-      <icon class="iconfont icon-pause" bindtap="iconPauseClick"></icon>
+      <icon class="iconfont icon-pause" bindtap="pause"></icon>
     </block>
-    <icon class="iconfont icon-xiayishou"></icon>
-    <icon class="iconfont icon-category"></icon>
+    <icon class="iconfont icon-xiayishou" bindtap="playNext"></icon>
+    <icon class="iconfont icon-category"  bindtap="showList"></icon>
+
   </view>
+  <van-popup
+    show="{{ listVisible }}"
+    round
+    position="bottom"
+    custom-style="height: 40%"
+    bind:close="closeList"
+  >
+  <view class="popup-list" wx:for="{{list}}" wx:key="id" data-item="{{item}}" bindtap="itemClick">
+    <view class="left">
+      {{item.id}}
+    </view>
+    <view class="center">
+      <view class="name">{{item.name}}</view>
+      <view class="source">{{item.id}}</view>
+    </view>
+    
+  </view>
+  </van-popup>
 </view>
 
 <wxs module="mod">
+  // 格式化工具类：把数字转化成分钟
   var format = function (value) {
     var length = Math.floor(parseInt(value));
     var minute = Math.floor(value / 60);
-    if (minute < 10) { minute = "0" + minute; } 
+    if (minute < 10) { 
+      minute = "0" + minute; 
+    } 
     var second = length % 60; 
-    if (second < 10) { second = "0" + second; } 
+    if (second < 10) { 
+      second = "0" + second; 
+    } 
     return minute + ":" + second;
   } 
   module.exports = { format: format } 
-</wxs>
+  </wxs>

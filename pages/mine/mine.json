@@ -2,6 +2,11 @@
   "usingComponents": {
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-tag": "@vant/weapp/tag/index"
-  }
+    "van-tag": "@vant/weapp/tag/index",
+    "my-header":"./components/my-header/my-header"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#0c8ed9",
+  "navigationBarTitleText": "学习不刻苦，不如回家卖红薯",
+  "navigationBarTextStyle": "white"
 }
